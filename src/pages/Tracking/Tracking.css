@@ -1,0 +1,652 @@
+/* =========================================================
+   THREADLOOM — ORDER TRACKING
+   ========================================================= */
+
+.tracking-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f7f5f0;
+  color: #151515;
+  padding-bottom: 100px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.tracking-header {
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+
+.tracking-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 65px;
+  transition: opacity 0.3s ease;
+}
+
+.tracking-back:hover {
+  opacity: 0.55;
+}
+
+.tracking-eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  color: #77736d;
+  margin-bottom: 22px;
+}
+
+.tracking-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 9vw, 145px);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.055em;
+  max-width: 850px;
+}
+
+.tracking-header h1 em {
+  font-style: italic;
+}
+
+/* =========================================================
+   ORDER SUMMARY
+   ========================================================= */
+
+.tracking-summary {
+  border-top: 1px solid #d9d5ce;
+  border-bottom: 1px solid #d9d5ce;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tracking-order-info {
+  min-height: 130px;
+  padding: 32px 35px;
+  border-right: 1px solid #d9d5ce;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tracking-order-info:last-child {
+  border-right: 0;
+}
+
+.tracking-order-info span {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #77736d;
+}
+
+.tracking-order-info strong {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   MAIN TRACKING CONTENT
+   ========================================================= */
+
+.tracking-content {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.tracking-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.tracking-title-row > div:first-child p {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  color: #77736d;
+  margin-bottom: 20px;
+}
+
+.tracking-title-row h2 {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 6vw, 90px);
+  font-weight: 400;
+  line-height: 0.86;
+  letter-spacing: -0.05em;
+}
+
+.tracking-title-row h2 em {
+  font-style: italic;
+}
+
+.tracking-status-badge {
+  padding: 14px 20px;
+  border: 1px solid #171717;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.tracking-timeline {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tracking-step {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  min-height: 150px;
+}
+
+.tracking-step-marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.tracking-icon {
+  width: 46px;
+  height: 46px;
+  border: 1px solid #cbc7c0;
+  border-radius: 50%;
+  background: #f7f5f0;
+  color: #9a958d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.tracking-step.completed .tracking-icon {
+  background: #171717;
+  color: #ffffff;
+  border-color: #171717;
+}
+
+.tracking-line {
+  position: absolute;
+  top: 46px;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #d8d4cd;
+  transform: translateX(-50%);
+}
+
+.tracking-step.completed .tracking-line {
+  background: #171717;
+}
+
+/* =========================================================
+   STEP CONTENT
+   ========================================================= */
+
+.tracking-step-content {
+  padding: 2px 0 55px 35px;
+  border-bottom: 1px solid #ddd9d2;
+}
+
+.tracking-step:last-child
+  .tracking-step-content {
+  border-bottom: 0;
+}
+
+.tracking-step-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.tracking-step-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.tracking-step-number {
+  font-size: 9px;
+  color: #9a958d;
+  letter-spacing: 0.1em;
+}
+
+.tracking-step-heading h3 {
+  font-family: var(--font-display);
+  font-size: 29px;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.tracking-step-status {
+  padding-top: 7px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #aaa59d;
+}
+
+.tracking-step-status.done {
+  color: #171717;
+}
+
+.tracking-step-content > p {
+  margin-top: 14px;
+  margin-left: 34px;
+  max-width: 540px;
+  color: #77736d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   ORDER PRODUCTS
+   ========================================================= */
+
+.tracking-products {
+  border-top: 1px solid #d9d5ce;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.tracking-products-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 55px;
+}
+
+.tracking-products-header p {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #77736d;
+  margin-bottom: 18px;
+}
+
+.tracking-products-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(50px, 5vw, 76px);
+  line-height: 0.85;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.tracking-products-header h2 em {
+  font-style: italic;
+}
+
+.tracking-products-header > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #171717;
+  padding-bottom: 10px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.tracking-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tracking-product {
+  background: #ffffff;
+}
+
+.tracking-product-image {
+  width: 100%;
+  aspect-ratio: 0.82;
+  overflow: hidden;
+  background: #eeebe5;
+}
+
+.tracking-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tracking-product-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #aaa59d;
+}
+
+.tracking-product-info {
+  padding: 22px 18px 25px;
+}
+
+.tracking-product-info p {
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  color: #77736d;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.tracking-product-info h3 {
+  font-family: var(--font-display);
+  font-size: 23px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.tracking-product-info span {
+  display: inline-block;
+  margin-right: 14px;
+  font-size: 9px;
+  color: #77736d;
+  letter-spacing: 0.08em;
+}
+
+.tracking-product-info strong {
+  display: block;
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   DELIVERY + PAYMENT
+   ========================================================= */
+
+.tracking-delivery {
+  border-top: 1px solid #d9d5ce;
+  border-bottom: 1px solid #d9d5ce;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tracking-delivery > div {
+  padding: 50px 40px;
+  min-height: 200px;
+}
+
+.tracking-delivery > div:first-child {
+  border-right: 1px solid #d9d5ce;
+}
+
+.tracking-delivery p {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: #77736d;
+  margin-bottom: 18px;
+}
+
+.tracking-delivery h3 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.tracking-delivery span {
+  display: block;
+  color: #77736d;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FOOTER CTA
+   ========================================================= */
+
+.tracking-footer {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.tracking-footer > p {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  color: #77736d;
+  margin-bottom: 25px;
+}
+
+.tracking-footer h2 {
+  font-family: var(--font-display);
+  font-size: clamp(55px, 7vw, 105px);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.055em;
+  margin-bottom: 45px;
+}
+
+.tracking-footer h2 em {
+  font-style: italic;
+}
+
+.tracking-shop-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  min-width: 230px;
+  padding: 20px 25px;
+  background: #171717;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tracking-shop-button:hover {
+  background: #333333;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .tracking-header {
+    padding-top: 65px;
+    padding-bottom: 60px;
+  }
+
+  .tracking-header h1 {
+    font-size: clamp(60px, 12vw, 105px);
+  }
+
+  .tracking-content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .tracking-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tracking-step {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .tracking-step-content {
+    padding-left: 25px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .tracking-page {
+    padding-bottom: 50px;
+  }
+
+  .tracking-header {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+
+  .tracking-back {
+    margin-bottom: 45px;
+  }
+
+  .tracking-header h1 {
+    font-size: clamp(58px, 18vw, 88px);
+  }
+
+  .tracking-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .tracking-order-info {
+    min-height: auto;
+    padding: 22px 0;
+    border-right: 0;
+    border-bottom: 1px solid #d9d5ce;
+  }
+
+  .tracking-order-info:last-child {
+    border-bottom: 0;
+  }
+
+  .tracking-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 55px;
+  }
+
+  .tracking-title-row h2 {
+    font-size: 56px;
+  }
+
+  .tracking-status-badge {
+    align-self: flex-start;
+  }
+
+  .tracking-content {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .tracking-step {
+    grid-template-columns: 48px 1fr;
+    min-height: 145px;
+  }
+
+  .tracking-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .tracking-line {
+    top: 38px;
+  }
+
+  .tracking-step-content {
+    padding-left: 18px;
+    padding-bottom: 40px;
+  }
+
+  .tracking-step-heading {
+    display: block;
+  }
+
+  .tracking-step-heading > div {
+    gap: 10px;
+  }
+
+  .tracking-step-heading h3 {
+    font-size: 23px;
+  }
+
+  .tracking-step-status {
+    display: inline-block;
+    margin-top: 12px;
+    padding-top: 0;
+  }
+
+  .tracking-step-content > p {
+    margin-left: 0;
+    font-size: 11px;
+    margin-top: 12px;
+  }
+
+  .tracking-products {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .tracking-products-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .tracking-products-header h2 {
+    font-size: 55px;
+  }
+
+  .tracking-products-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .tracking-delivery {
+    grid-template-columns: 1fr;
+  }
+
+  .tracking-delivery > div {
+    padding: 35px 0;
+    min-height: auto;
+  }
+
+  .tracking-delivery > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid #d9d5ce;
+  }
+
+  .tracking-footer {
+    padding-top: 75px;
+    padding-bottom: 40px;
+  }
+
+  .tracking-footer h2 {
+    font-size: 58px;
+  }
+
+  .tracking-shop-button {
+    width: 100%;
+  }
+}

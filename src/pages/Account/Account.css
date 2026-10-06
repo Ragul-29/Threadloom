@@ -1,0 +1,339 @@
+.account-page {
+  width: 100%;
+  min-height: 80vh;
+  padding: 120px 6% 120px;
+  background: #ffffff;
+  color: #171717;
+}
+
+/* HEADER */
+
+.account-header {
+  max-width: 1380px;
+  margin: 0 auto 80px;
+}
+
+.account-header p {
+  margin: 0 0 22px;
+  color: #77736d;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.account-header h1 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(65px, 9vw, 125px);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+/* LAYOUT */
+
+.account-layout {
+  max-width: 1380px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 90px;
+  align-items: start;
+}
+
+/* SIDEBAR */
+
+.account-sidebar {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #dedbd5;
+}
+
+.account-sidebar button,
+.account-sidebar a {
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border-bottom: 1px solid #dedbd5;
+  background: transparent;
+  color: #77736d;
+  text-decoration: none;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.account-sidebar button:hover,
+.account-sidebar button.active,
+.account-sidebar a:hover {
+  color: #171717;
+}
+
+.account-sidebar button:focus-visible,
+.account-sidebar a:focus-visible {
+  outline: 1px solid #171717;
+  outline-offset: 3px;
+}
+
+.account-sidebar a {
+  justify-content: space-between;
+}
+
+.account-sidebar .account-logout {
+  margin-top: 25px;
+  border-top: 1px solid #dedbd5;
+}
+
+/* CONTENT */
+
+.account-content {
+  min-width: 0;
+}
+
+.account-panel {
+  max-width: 800px;
+}
+
+.account-label {
+  margin: 0 0 18px;
+  color: #77736d;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.account-panel h2 {
+  margin: 0 0 45px;
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+/* FORM */
+
+.account-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 18px;
+}
+
+.account-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  color: #77736d;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.account-form input {
+  width: 100%;
+  height: 50px;
+  padding: 0 14px;
+  border: 1px solid #dedbd5;
+  border-radius: 0;
+  outline: none;
+  background: #ffffff;
+  color: #171717;
+  font-family: inherit;
+  font-size: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.account-form input:focus {
+  border-color: #171717;
+}
+
+.account-form input::placeholder {
+  color: #aaa59d;
+}
+
+/* SAVE */
+
+.account-save {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: 1 / -1;
+  padding: 0 18px;
+  border: 1px solid #171717;
+  background: #171717;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.account-save:hover {
+  background: #ffffff;
+  color: #171717;
+}
+
+.account-save:focus-visible {
+  outline: 1px solid #171717;
+  outline-offset: 3px;
+}
+
+.account-saved {
+  grid-column: 1 / -1;
+  margin: -5px 0 0;
+  color: #5d675d;
+  font-size: 10px;
+}
+
+/* EMPTY ORDERS */
+
+.account-empty {
+  padding: 70px 30px;
+  border-top: 1px solid #dedbd5;
+  border-bottom: 1px solid #dedbd5;
+  text-align: center;
+}
+
+.account-empty svg {
+  margin-bottom: 22px;
+}
+
+.account-empty h3 {
+  margin: 0 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.account-empty p {
+  margin: 0 0 25px;
+  color: #77736d;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.account-empty a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #171717;
+  color: #171717;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  transition: opacity 0.25s ease;
+}
+
+.account-empty a:hover {
+  opacity: 0.55;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .account-page {
+    padding: 100px 5% 90px;
+  }
+
+  .account-header {
+    margin-bottom: 60px;
+  }
+
+  .account-layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .account-sidebar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .account-sidebar .account-logout {
+    margin-top: 0;
+    border-top: 0;
+  }
+
+  .account-content {
+    width: 100%;
+  }
+
+  .account-panel {
+    max-width: 100%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .account-page {
+    padding: 90px 20px 80px;
+  }
+
+  .account-header {
+    margin-bottom: 50px;
+  }
+
+  .account-header p {
+    margin-bottom: 18px;
+    font-size: 8px;
+  }
+
+  .account-header h1 {
+    font-size: clamp(58px, 18vw, 78px);
+  }
+
+  .account-sidebar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .account-sidebar button,
+  .account-sidebar a {
+    min-height: 50px;
+    font-size: 8px;
+  }
+
+  .account-sidebar .account-logout {
+    grid-column: 1 / -1;
+  }
+
+  .account-panel h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+  }
+
+  .account-form {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .account-save,
+  .account-saved {
+    grid-column: auto;
+  }
+
+  .account-empty {
+    padding: 55px 20px;
+  }
+
+  .account-empty h3 {
+    font-size: 27px;
+  }
+
+  .account-empty p {
+    font-size: 11px;
+  }
+}

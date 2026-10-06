@@ -1,0 +1,905 @@
+.threadloom-hero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  min-height: 720px;
+
+  overflow: hidden;
+
+  background: #0b0b0a;
+
+  color: #f3f0e9;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  z-index: -5;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(95, 84, 70, 0.4),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(150, 130, 100, 0.16),
+      transparent 28%
+    ),
+    linear-gradient(
+      120deg,
+      #090908,
+      #171613,
+      #080808
+    );
+}
+
+
+.hero-background-image {
+  position: absolute;
+
+  width: 65vw;
+  height: 100%;
+
+  top: 0;
+  left: 18%;
+
+  z-index: -4;
+
+  opacity: 0.16;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=1800&q=80");
+
+  background-size: cover;
+  background-position: center;
+
+  filter:
+    grayscale(100%)
+    contrast(1.2)
+    blur(1px);
+
+  transform: scale(1.08);
+}
+
+
+.hero-background-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #090908 0%,
+      transparent 45%,
+      #090908 100%
+    );
+}
+
+
+/* =========================================
+   GRAIN
+========================================= */
+
+.hero-grain {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 40;
+
+  pointer-events: none;
+
+  opacity: 0.055;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.hero-navigation {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 88px;
+
+  padding: 0 44px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  z-index: 50;
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,0.1);
+
+  background:
+    linear-gradient(
+      rgba(8,8,8,0.55),
+      transparent
+    );
+
+  backdrop-filter:
+    blur(10px);
+}
+
+
+.hero-logo {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.25em;
+}
+
+
+.hero-menu {
+  display: flex;
+
+  gap: 32px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.18em;
+
+  color:
+    rgba(255,255,255,0.68);
+}
+
+
+.hero-menu span,
+.hero-actions span {
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.hero-menu span:hover,
+.hero-actions span:hover {
+  color: white;
+}
+
+
+.hero-actions {
+  justify-self: end;
+
+  display: flex;
+
+  gap: 24px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.16em;
+
+  color:
+    rgba(255,255,255,0.58);
+}
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.hero-information {
+  position: absolute;
+
+  top: 118px;
+
+  left: 44px;
+  right: 44px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  z-index: 20;
+
+  font-size: 9px;
+
+  letter-spacing: 0.3em;
+
+  color:
+    rgba(255,255,255,0.42);
+}
+
+
+/* =========================================
+   EDITORIAL TITLE
+========================================= */
+
+.hero-editorial {
+  position: absolute;
+
+  left: 6vw;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  z-index: 15;
+
+  pointer-events: none;
+}
+
+
+.hero-small-title {
+  margin: 0 0 24px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.35em;
+
+  color:
+    rgba(255,255,255,0.5);
+}
+
+
+.hero-editorial h1 {
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      72px,
+      9.5vw,
+      160px
+    );
+
+  line-height: 0.78;
+
+  font-weight: 700;
+
+  letter-spacing: -0.08em;
+
+  white-space: nowrap;
+}
+
+
+.outline-title {
+  margin-left: 7vw !important;
+
+  color: transparent;
+
+  -webkit-text-stroke:
+    1px
+    rgba(255,255,255,0.68);
+}
+
+
+/* =========================================
+   FASHION STAGE
+========================================= */
+
+.fashion-stage {
+  position: absolute;
+
+  top: 50%;
+  left: 58%;
+
+  width: 560px;
+  height: 680px;
+
+  transform:
+    translate(-50%, -50%);
+
+  z-index: 10;
+
+  perspective: 1600px;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================
+   CARDS
+========================================= */
+
+.fashion-card {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 285px;
+  height: 430px;
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  cursor: grab;
+
+  user-select: none;
+
+  box-shadow:
+    0 40px 80px
+    rgba(0,0,0,0.45);
+
+  border:
+    1px solid
+    rgba(255,255,255,0.18);
+
+  background: #1b1a17;
+}
+
+
+.fashion-card:active {
+  cursor: grabbing;
+}
+
+
+.fashion-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  pointer-events: none;
+
+  filter:
+    saturate(0.78)
+    contrast(1.08);
+
+  transition:
+    transform 0.8s ease;
+}
+
+
+.fashion-card:hover img {
+  transform:
+    scale(1.06);
+}
+
+
+/* =========================================
+   CARD POSITIONS
+========================================= */
+
+.fashion-card-1 {
+  margin-left: -190px;
+
+  margin-top: -210px;
+
+  transform:
+    translateZ(40px)
+    rotateY(10deg)
+    rotateZ(-7deg);
+}
+
+
+.fashion-card-2 {
+  margin-left: -145px;
+
+  margin-top: -250px;
+
+  width: 315px;
+  height: 480px;
+
+  z-index: 5;
+
+  transform:
+    translateZ(130px)
+    rotateY(-3deg)
+    rotateZ(1deg);
+
+  box-shadow:
+    0 60px 120px
+    rgba(0,0,0,0.65);
+}
+
+
+.fashion-card-3 {
+  margin-left: -70px;
+
+  margin-top: -195px;
+
+  transform:
+    translateZ(20px)
+    rotateY(-13deg)
+    rotateZ(7deg);
+}
+
+
+/* =========================================
+   CARD OVERLAY
+========================================= */
+
+.fashion-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.05),
+      transparent 55%,
+      rgba(0,0,0,0.72)
+    );
+}
+
+
+/* =========================================
+   CARD INFO
+========================================= */
+
+.fashion-card-info {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+
+  bottom: 17px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 8px;
+
+  letter-spacing: 0.22em;
+
+  color: white;
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   CENTER LIGHT
+========================================= */
+
+.stage-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 300px;
+  height: 300px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(210,190,155,0.12);
+
+  filter: blur(90px);
+
+  z-index: -2;
+}
+
+
+/* =========================================
+   CENTER LABEL
+========================================= */
+
+.center-label {
+  position: absolute;
+
+  top: 50%;
+  left: 58%;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  z-index: 20;
+
+  font-size: 8px;
+
+  letter-spacing: 0.28em;
+
+  color:
+    rgba(255,255,255,0.65);
+
+  pointer-events: none;
+}
+
+
+.center-line {
+  width: 35px;
+  height: 1px;
+
+  background:
+    rgba(255,255,255,0.45);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  position: absolute;
+
+  left: 6vw;
+
+  bottom: 46px;
+
+  z-index: 20;
+}
+
+
+.hero-description p {
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color:
+    rgba(255,255,255,0.55);
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.hero-cta {
+  position: absolute;
+
+  right: 6vw;
+
+  bottom: 44px;
+
+  z-index: 25;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 45px;
+
+  min-width: 230px;
+
+  padding: 18px 21px;
+
+  border:
+    1px solid
+    rgba(255,255,255,0.32);
+
+  background:
+    rgba(255,255,255,0.045);
+
+  color: white;
+
+  backdrop-filter:
+    blur(15px);
+
+  cursor: pointer;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.hero-cta:hover {
+  background:
+    rgba(255,255,255,0.12);
+
+  border-color:
+    rgba(255,255,255,0.65);
+}
+
+
+.hero-arrow {
+  font-size: 18px;
+}
+
+
+/* =========================================
+   SIDE TEXT
+========================================= */
+
+.hero-side {
+  position: absolute;
+
+  right: 32px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
+  writing-mode: vertical-rl;
+
+  font-size: 8px;
+
+  letter-spacing: 0.3em;
+
+  color:
+    rgba(255,255,255,0.42);
+
+  z-index: 20;
+}
+
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 38px;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  z-index: 25;
+
+  font-size: 8px;
+
+  letter-spacing: 0.3em;
+
+  color:
+    rgba(255,255,255,0.4);
+}
+
+
+.scroll-track {
+  width: 65px;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  background:
+    rgba(255,255,255,0.2);
+}
+
+
+.scroll-progress {
+  width: 25px;
+
+  height: 1px;
+
+  background: white;
+
+  animation:
+    scrollMove 1.6s
+    ease-in-out
+    infinite;
+}
+
+
+@keyframes scrollMove {
+
+  0% {
+    transform:
+      translateX(-30px);
+  }
+
+  100% {
+    transform:
+      translateX(70px);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .hero-menu {
+    display: none;
+  }
+
+  .hero-navigation {
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+  .fashion-stage {
+    left: 62%;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.85);
+  }
+
+  .hero-editorial {
+    left: 5vw;
+  }
+
+  .hero-editorial h1 {
+    font-size: 11vw;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .threadloom-hero {
+    height: 100svh;
+
+    min-height: 680px;
+  }
+
+
+  .hero-navigation {
+    height: 70px;
+
+    padding: 0 20px;
+  }
+
+
+  .hero-actions span:not(:last-child) {
+    display: none;
+  }
+
+
+  .hero-information {
+    top: 92px;
+
+    left: 20px;
+    right: 20px;
+
+    font-size: 7px;
+  }
+
+
+  .hero-editorial {
+    left: 20px;
+
+    top: 30%;
+  }
+
+
+  .hero-small-title {
+    font-size: 7px;
+
+    margin-bottom: 15px;
+  }
+
+
+  .hero-editorial h1 {
+    font-size:
+      clamp(
+        55px,
+        16vw,
+        90px
+      );
+  }
+
+
+  .outline-title {
+    margin-left: 8vw !important;
+  }
+
+
+  .fashion-stage {
+    top: 61%;
+
+    left: 53%;
+
+    width: 360px;
+    height: 420px;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.72);
+  }
+
+
+  .fashion-card-1 {
+    margin-left: -170px;
+  }
+
+
+  .fashion-card-2 {
+    margin-left: -145px;
+  }
+
+
+  .fashion-card-3 {
+    margin-left: -70px;
+  }
+
+
+  .center-label {
+    top: 61%;
+    left: 53%;
+  }
+
+
+  .hero-description {
+    display: none;
+  }
+
+
+  .hero-side {
+    display: none;
+  }
+
+
+  .hero-cta {
+    left: 20px;
+    right: 20px;
+
+    bottom: 22px;
+
+    width: auto;
+
+    min-width: 0;
+  }
+
+
+  .hero-scroll {
+    display: none;
+  }
+}

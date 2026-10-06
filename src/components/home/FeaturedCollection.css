@@ -1,0 +1,253 @@
+.featured-collection {
+  width: 100%;
+  padding: 150px 6% 140px;
+  background: #f4f1eb;
+  color: #171717;
+}
+
+.featured-header {
+  max-width: 1380px;
+  margin: 0 auto 75px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.featured-header .section-label {
+  margin-bottom: 28px;
+  color: #77736d;
+}
+
+.featured-header h2 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(55px, 7vw, 105px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.featured-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #171717;
+  color: #171717;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  transition:
+    gap 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.featured-view-all:hover {
+  gap: 18px;
+  opacity: 0.55;
+}
+
+.featured-list {
+  max-width: 1380px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.featured-item {
+  min-width: 0;
+}
+
+.featured-card {
+  display: block;
+  color: #171717;
+  text-decoration: none;
+}
+
+.featured-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 0.78;
+  overflow: hidden;
+  background: #ded8ce;
+}
+
+.featured-image-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.featured-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 35%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.featured-number {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.featured-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  transform: translateY(8px);
+  opacity: 0;
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.featured-card:hover .featured-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.featured-card:hover .featured-arrow:hover {
+  background: #ffffff;
+  color: #171717;
+}
+
+.featured-card-info {
+  min-height: 100px;
+  padding: 23px 2px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.featured-card-info span {
+  color: #77736d;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.featured-card-info h3 {
+  margin: 10px 0 0;
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.featured-category {
+  padding-top: 3px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .featured-collection {
+    padding: 120px 5% 110px;
+  }
+
+  .featured-header {
+    margin-bottom: 55px;
+  }
+
+  .featured-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-item:last-child {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 9px);
+  }
+}
+
+@media (max-width: 700px) {
+  .featured-collection {
+    padding: 90px 20px 85px;
+  }
+
+  .featured-header {
+    margin-bottom: 45px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .featured-header .section-label {
+    margin-bottom: 20px;
+  }
+
+  .featured-header h2 {
+    font-size: 58px;
+  }
+
+  .featured-list {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .featured-item:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .featured-image-wrap {
+    aspect-ratio: 0.82;
+  }
+
+  .featured-arrow {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .featured-card-info {
+    min-height: auto;
+    padding-top: 18px;
+  }
+
+  .featured-card-info h3 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 420px) {
+  .featured-header h2 {
+    font-size: 52px;
+  }
+
+  .featured-number {
+    top: 16px;
+    left: 16px;
+  }
+
+  .featured-arrow {
+    right: 15px;
+    bottom: 15px;
+    width: 42px;
+    height: 42px;
+  }
+}

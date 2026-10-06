@@ -1,0 +1,40 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+  color: #171717;
+}
+
+.page {
+  width: 100%;
+  min-height: 50vh;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid #171717;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #171717;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .page {
+    min-height: 40vh;
+  }
+}
